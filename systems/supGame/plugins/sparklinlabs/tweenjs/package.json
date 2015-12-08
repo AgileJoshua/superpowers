@@ -1,0 +1,13 @@
+{
+  "name": "superpowers-sparklinlabs-tweenjs-plugin",
+  "description": "tween.js tweening plugin for Superpowers, the HTML5 2D+3D game maker",
+  "version": "1.0.0",
+  "license": "ISC",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/superpowers/sup-game-sparklinlabs-plugins"
+  },
+  "dependencies": {
+    "tween.js": "^0.14.0"
+  }
+}

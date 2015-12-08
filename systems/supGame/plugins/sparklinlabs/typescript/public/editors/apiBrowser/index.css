@@ -1,0 +1,100 @@
+body {
+  display: flex;
+}
+nav {
+  width: 250px;
+  background: #ddd;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-flow: column;
+}
+nav input[type=search] {
+  border: none;
+  padding: 0.5em;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+nav .defs {
+  flex: 1;
+  flex-basis: 0;
+  position: relative;
+  overflow-y: auto;
+}
+nav .defs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em;
+}
+nav .defs li {
+  padding: 0;
+  margin: 0;
+}
+nav .defs a {
+  display: flex;
+  align-items: center;
+  color: #444;
+  padding: 0.25em;
+  text-decoration: none;
+}
+nav .defs a:hover {
+  background: #ccc;
+}
+nav .defs a:active {
+  color: #fff;
+}
+nav .defs a .name {
+  flex: 1;
+  padding: 0 0.25em;
+  pointer-events: none;
+}
+nav .defs a .results {
+  pointer-events: none;
+}
+nav .defs a .results:not(:empty) {
+  font-size: smaller;
+  border-radius: 1em;
+  padding: 0 0.5em;
+  background: rgba(0,0,0,0.3);
+  color: rgba(255,255,255,0.8);
+}
+nav .defs a.active {
+  background: #444;
+  color: #eee;
+}
+nav .defs a.active .results:not(:empty) {
+  background: rgba(255,255,255,0.3);
+  color: rgba(0,0,0,0.8);
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+}
+article {
+  flex: 1;
+  display: none;
+  overflow-y: auto;
+}
+article.active {
+  display: block;
+}
+article header {
+  font-size: 24pt;
+}
+article:not(.no-results) {
+  background: #474747;
+}
+article.no-results {
+  padding: 1em;
+}
+article pre {
+  white-space: pre-wrap;
+  font-family: "Consolas", monospace;
+  font-size: 16px;
+  color: #dadada;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  margin: 0;
+  padding: 1em;
+}

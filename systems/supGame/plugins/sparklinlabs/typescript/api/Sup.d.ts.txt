@@ -1,0 +1,18 @@
+declare namespace Sup {
+  function log(message?: any, ...optionalParams: any[]): void;
+  function exit();
+
+  class Asset {
+    name: string;
+    path: string;
+    type: string;
+    constructor(inner: { [key:string]: any; });
+  }
+
+  class Folder extends Asset {
+    children: string[];
+  }
+
+  function get(path: string, options?: { "ignoreMissing": boolean; }): Asset;
+  function get<T extends Asset>(path: string, type: new(inner: { [key:string]: any; }) => T, options?: { "ignoreMissing": boolean; }): T;
+}

@@ -1,0 +1,12 @@
+namespace Sup {
+  export namespace Audio {
+    export function getMasterVolume(volume) {
+      player.gameInstance.audio.getContext();
+      return player.gameInstance.audio.masterGain.gain.value;
+    }
+    export function setMasterVolume(volume) {
+      player.gameInstance.audio.getContext();
+      player.gameInstance.audio.masterGain.gain.value = volume;
+    }
+  }
+}

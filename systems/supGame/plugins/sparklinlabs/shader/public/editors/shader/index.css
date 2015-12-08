@@ -1,0 +1,141 @@
+body {
+  display: flex;
+  flex-flow: column;
+}
+body .header {
+  background: #444;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+body .header.has-draft {
+  background-color: #37d;
+  padding-left: 0.25em;
+}
+body .header.has-errors {
+  background-color: #a44;
+}
+body .header .info {
+  padding: 0.5em;
+  flex: 1;
+}
+body .header .settings {
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+}
+body .top {
+  flex: 1;
+  display: flex;
+  flex-flow: row;
+  min-height: 200px;
+}
+body .left {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  min-width: 300px;
+}
+body .uniforms,
+body .attributes {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+}
+body .uniforms .list,
+body .attributes .list {
+  overflow-y: auto;
+}
+body .uniforms table,
+body .attributes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+body .uniforms tr,
+body .attributes tr {
+  height: 2em;
+}
+body .uniforms tr.immutable td,
+body .attributes tr.immutable td {
+  color: #666;
+  padding: 0.5em;
+}
+body .uniforms tr th,
+body .attributes tr th {
+  background: #eee;
+  padding: 0.5em;
+}
+body .uniforms td,
+body .attributes td,
+body .uniforms th,
+body .attributes th {
+  text-align: left;
+  border: 1px solid #ccc;
+  width: 45%;
+}
+body .uniforms td:nth-child(2),
+body .attributes td:nth-child(2),
+body .uniforms th:nth-child(2),
+body .attributes th:nth-child(2) {
+  width: 10%;
+}
+body .uniforms td .value,
+body .attributes td .value,
+body .uniforms th .value,
+body .attributes th .value {
+  display: flex;
+}
+body .uniforms td .value input:not(:last-child),
+body .attributes td .value input:not(:last-child),
+body .uniforms th .value input:not(:last-child),
+body .attributes th .value input:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+body .uniforms td input,
+body .attributes td input,
+body .uniforms th input,
+body .attributes th input,
+body .uniforms td select,
+body .attributes td select,
+body .uniforms th select,
+body .attributes th select {
+  width: 100%;
+  border: none;
+}
+body .uniforms td input,
+body .attributes td input,
+body .uniforms th input,
+body .attributes th input {
+  padding: 0.5em;
+}
+body .preview {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  min-width: 300px;
+}
+body .preview .preview-asset-path {
+  margin-left: 0.5em;
+}
+body .preview canvas {
+  flex: 1;
+  flex-basis: 0;
+  background-color: #000;
+}
+body .shaders {
+  display: flex;
+  min-height: 200px;
+  height: 50%;
+}
+body .shaders .vertex,
+body .shaders .fragment {
+  display: flex;
+  flex-flow: column;
+  min-width: 300px;
+}
+body .shaders .vertex {
+  flex: 1;
+}
+body .shaders .fragment {
+  width: 50%;
+}

@@ -1,0 +1,59 @@
+body {
+  display: flex;
+}
+nav {
+  width: 250px;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  background: #ddd;
+  bottom: 0;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5em;
+}
+nav li {
+  padding: 0;
+  margin: 0;
+}
+nav a {
+  display: block;
+  color: #444;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+}
+nav a:hover {
+  background: #ccc;
+}
+nav a:active {
+  color: #fff;
+}
+nav a.active {
+  background: #444;
+  color: #eee;
+}
+main {
+  margin-left: 250px;
+  padding: 1em;
+  flex: 1;
+}
+article {
+  flex: 1;
+  display: none;
+  overflow-y: auto;
+}
+article.active {
+  display: block;
+}
+article > *:first-child {
+  margin-top: 0;
+}
+article h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+article h2 {
+  font-size: 1.5em;
+}

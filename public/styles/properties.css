@@ -1,0 +1,82 @@
+table.properties {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+table.properties th,
+table.properties td {
+  border: 1px solid #ccc;
+}
+table.properties th {
+  text-align: left;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  background: #eee;
+  padding: 0 0.5em;
+}
+table.properties th > div {
+  display: flex;
+  align-items: center;
+}
+table.properties th > div > div {
+  flex: 1;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+table.properties th:only-child {
+  background: #777;
+  color: #eee;
+  padding: 0.5em;
+}
+table.properties td input,
+table.properties td select,
+table.properties td textarea {
+  width: 100%;
+}
+table.properties td input,
+table.properties td select,
+table.properties td textarea {
+  margin: 0;
+  padding: 0.5em 0.25em;
+  border: none;
+}
+table.properties td select {
+  padding: 0.25em 0;
+}
+table.properties td input[type=checkbox] {
+  width: auto;
+  margin: 0.5em;
+  cursor: pointer;
+}
+table.properties td input.color {
+  font-family: "Consolas", monospace;
+}
+table.properties td input[type=color] {
+  padding: 0;
+}
+table.properties td input[readonly] {
+  color: #888;
+}
+table.properties td .inputs {
+  display: flex;
+  align-items: center;
+}
+table.properties td .inputs > input:not([type=checkbox]) {
+  flex: 1;
+}
+table.properties td .inputs > input:not(:last-of-type) {
+  border-right: 1px solid #ccc;
+}
+table.properties td .inputs > select {
+  flex: 1;
+}
+table.properties td .inputs > select:not(:last-of-type) {
+  border-right: 1px solid #ccc;
+}
+table.properties td .list input:not(:last-of-type) {
+  border-bottom: 1px solid #ccc;
+}

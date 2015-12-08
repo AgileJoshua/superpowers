@@ -1,0 +1,14 @@
+{
+  "name": "superpowers-engine",
+  "description": "Three.js-based game engine for Superpowers, the HTML5 2D+3D game maker",
+  "version": "1.0.0",
+  "license": "ISC",
+  "main": "src/index.js",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/superpowers/sup-game-system"
+  },
+  "dependencies": {
+    "three": "0.73.0"
+  }
+}

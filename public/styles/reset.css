@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url("/fonts/Roboto/Roboto-Thin.woff") format('woff'), url("fonts/Roboto/Roboto-Thin.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url("/fonts/Roboto/Roboto-Light.woff") format('woff'), url("fonts/Roboto/Roboto-Light.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url("/fonts/Roboto/Roboto.woff") format('woff'), url("fonts/Roboto/Roboto.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url("/fonts/Roboto/Roboto-Bold.woff") format('woff'), url("fonts/Roboto/Roboto-Bold.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url("/fonts/Roboto/Roboto-Black.woff") format('woff'), url("fonts/Roboto/Roboto-Black.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url("/fonts/Roboto/Roboto-Thin-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Thin-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url("/fonts/Roboto/Roboto-Light-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Light-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url("/fonts/Roboto/Roboto-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url("/fonts/Roboto/Roboto-Bold-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Bold-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url("/fonts/Roboto/Roboto-Black-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Black-Italic.woff") format('woff');
+}
+button {
+  background: linear-gradient(#efefef, #e5e5e5);
+  padding: 0.3em 0.6em;
+  border: 1px solid #999;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 1px #fff inset;
+  color: #222;
+  line-height: 1;
+}
+button:not(:disabled):hover {
+  border-color: #888;
+}
+button:active {
+  background: linear-gradient(#dadada, #e5e5e5);
+  border-color: #aaa;
+  box-shadow: 0 0 1px 1px #ccc inset;
+}
+button:disabled {
+  color: #aaa;
+}
+.button-strip button:not(:last-child) {
+  border-right: 0;
+  border-radius: 0;
+}
+.button-strip button:first-child {
+  border-radius: 2px 0 0 2px;
+}
+.button-strip button:last-child {
+  border-radius: 0 2px 2px 0;
+}
+.flat-button-strip {
+  display: flex;
+  background: rgba(0,0,0,0.05);
+  border-bottom: 1px solid #acacac;
+}
+.flat-button-strip button {
+  flex: 1;
+  height: 35px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.flat-button-strip button:hover {
+  background-color: rgba(0,0,0,0.1);
+  opacity: 1;
+}
+.flat-button-strip button:active {
+  background-color: #fff;
+}
+.flat-button-strip button:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  font-family: inherit;
+}
+*[hidden] {
+  display: none !important;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+.superpowers-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  padding: 2em;
+  color: #444;
+}
+.superpowers-error h1 {
+  margin-bottom: 1em;
+}
+input[type=number]:not(:hover):not(:focus) {
+  -moz-appearance: textfield;
+}

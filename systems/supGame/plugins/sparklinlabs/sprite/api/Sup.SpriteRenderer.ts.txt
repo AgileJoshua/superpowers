@@ -1,0 +1,74 @@
+namespace Sup {
+  let materialTypes = ["basic", "phong"];
+
+  export class SpriteRenderer extends Sup.ActorComponent {
+    constructor(actor: Actor, pathOrAsset: string|Sprite, materialIndex: number) {
+      super(actor);
+      this.__inner = new SupEngine.componentClasses.SpriteRenderer(this.actor.__inner);
+      if (pathOrAsset != null) {
+        let spriteAsset = (typeof pathOrAsset === "string") ? get(pathOrAsset, Sprite) : <Sprite>pathOrAsset;
+        this.__inner.opacity = spriteAsset.__inner.opacity;
+        this.setSprite(spriteAsset, materialIndex);
+      }
+      this.__inner.__outer = this;
+      this.actor.spriteRenderer = this;
+    }
+    destroy() {
+      this.actor.spriteRenderer = null;
+      super.destroy();
+    }
+
+    getSprite() { return (this.__inner.asset != null) ? this.__inner.asset.__outer : null; }
+    setSprite(pathOrAsset: string|Sprite, materialIndex: number) {
+      let material: string;
+      if (materialIndex != null) material = materialTypes[materialIndex];
+
+      let spriteAsset = (typeof pathOrAsset === "string") ? get(pathOrAsset, Sprite) : <Sprite>pathOrAsset;
+      this.__inner.setSprite((spriteAsset != null) ? spriteAsset.__inner : null, material);
+      return this;
+    }
+    getMaterialType() { return materialTypes.indexOf(this.__inner.materialType); }
+    setHorizontalFlip(horizontalFlip) { this.__inner.setHorizontalFlip(horizontalFlip); return this; }
+    getHorizontalFlip() { return this.__inner.horizontalFlip; }
+    setVerticalFlip(verticalFlip) { this.__inner.setVerticalFlip(verticalFlip); return this; }
+    getVerticalFlip() { return this.__inner.verticalFlip; }
+    getOpacity() { return this.__inner.opacity; }
+    setOpacity(opacity) { this.__inner.setOpacity(opacity); return this; }
+    getColor() { return new Color(this.__inner.color.r, this.__inner.color.g, this.__inner.color.b); }
+    setColor(r, g, b) {
+      if (g == null && b == null) {
+        let color = r;
+        this.__inner.color.r = color.r;
+        this.__inner.color.g = color.g;
+        this.__inner.color.b = color.b;
+      } else {
+        this.__inner.color.r = r;
+        this.__inner.color.g = g;
+        this.__inner.color.b = b;
+      }
+      this.__inner.threeMesh.material.color.setRGB(this.__inner.color.r, this.__inner.color.g, this.__inner.color.b);
+      return this;
+    }
+
+    setAnimation(animationName, looping) { this.__inner.setAnimation(animationName, looping); return this; }
+    getAnimation() { return this.__inner.getAnimation(); }
+    setAnimationFrameTime(frametime) { this.__inner.setAnimationFrameTime(frametime); return this; }
+    getAnimationFrameTime() { return this.__inner.getAnimationFrameTime(); }
+    getAnimationFrameIndex() { return this.__inner.getAnimationFrameIndex(); }
+    getAnimationFrameCount() { return this.__inner.getAnimationFrameCount(); }
+    getAnimationSpeed() { return this.__inner.animation != null ? this.__inner.animation.speed : null; }
+
+    isAnimationPlaying() { return this.__inner.isAnimationPlaying; }
+    playAnimation(looping) { this.__inner.playAnimation(looping); return this; }
+    pauseAnimation() { this.__inner.pauseAnimation(); return this; }
+    stopAnimation() { this.__inner.stopAnimation(); return this; }
+    setPlaybackSpeed(playbackSpeed) { this.__inner.playbackSpeed = playbackSpeed; return this; }
+    getPlaybackSpeed() { return this.__inner.playbackSpeed; }
+
+    getUniforms() { return this.__inner.material.uniforms; }
+  }
+
+  export namespace SpriteRenderer {
+    export enum MaterialType { Basic, Phong };
+  }
+}

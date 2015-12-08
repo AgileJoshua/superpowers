@@ -1,0 +1,51 @@
+body {
+  display: flex;
+}
+.main {
+  flex: 1;
+  display: flex;
+}
+.main canvas {
+  flex: 1;
+}
+.sidebar {
+  display: flex;
+  flex-flow: column;
+  width: 250px;
+  min-width: 200px;
+  max-width: 500px;
+}
+.sidebar table.properties th {
+  width: 100px;
+}
+.sidebar .header {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 2px;
+}
+.sidebar .properties-buttons {
+  display: flex;
+}
+.sidebar .properties-buttons button {
+  flex: 1;
+  font-size: smaller;
+  white-space: nowrap;
+}
+.sidebar .properties-tree-view {
+  flex: 1;
+  position: relative;
+  background: #fff;
+  overflow-y: auto;
+}
+.sidebar .properties-tree-view .tree {
+  position: absolute;
+}
+.sidebar .properties-tree-view .name {
+  white-space: pre;
+  width: 100px;
+}
+.sidebar .properties-tree-view input {
+  width: 150px;
+  margin-right: 5px;
+}

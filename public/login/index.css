@@ -1,0 +1,125 @@
+body {
+  display: flex;
+  border: 1px solid #666;
+}
+body.browser {
+  border: none;
+}
+body.browser .controls .minimize,
+body.browser .controls .maximize,
+body.browser .controls .close {
+  display: none;
+}
+.controls {
+  display: flex;
+  align-items: flex-start;
+}
+.controls button {
+  width: 30px;
+  height: 25px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-app-region: no-drag;
+}
+.controls .toggle-notifications {
+  background: url("/images/controls/notifications-enabled.svg");
+}
+.controls .toggle-notifications:hover {
+  background: url("/images/controls/notifications-enabled-hover.svg");
+}
+.controls .toggle-notifications:active {
+  background: url("/images/controls/notifications-enabled-active.svg");
+}
+.controls .toggle-notifications.disabled {
+  background: url("/images/controls/notifications-disabled.svg");
+}
+.controls .toggle-notifications.disabled:hover {
+  background: url("/images/controls/notifications-disabled-hover.svg");
+}
+.controls .toggle-notifications.disabled:active {
+  background: url("/images/controls/notifications-disabled-active.svg");
+}
+.controls .minimize {
+  background: url("/images/controls/minimize-window.svg");
+}
+.controls .minimize:hover {
+  background: url("/images/controls/minimize-window-hover.svg");
+}
+.controls .minimize:active {
+  background: url("/images/controls/minimize-window-active.svg");
+}
+.controls .maximize {
+  background: url("/images/controls/maximize-window.svg");
+}
+.controls .maximize:hover {
+  background: url("/images/controls/maximize-window-hover.svg");
+}
+.controls .maximize:active {
+  background: url("/images/controls/maximize-window-active.svg");
+}
+.controls .close {
+  background: url("/images/controls/close-window.svg");
+}
+.controls .close:hover {
+  background: url("/images/controls/close-window-hover.svg");
+}
+.controls .close:active {
+  background: url("/images/controls/close-window-active.svg");
+}
+.server-header {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.server-header .server-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 0.5em;
+  background: #eee;
+}
+.server-header .server-name {
+  -webkit-app-region: drag;
+  font-size: 2em;
+  font-weight: bold;
+  flex: 1;
+}
+.server-header .controls {
+  align-self: flex-start;
+}
+.server-footer {
+  margin: 0.5em;
+  text-align: center;
+  opacity: 0.5;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.server-footer:hover {
+  opacity: 1;
+}
+body {
+  background: #eee;
+  display: flex;
+  flex-flow: column;
+}
+.login {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.login .welcome {
+  margin: 1em;
+}
+.login table.properties {
+  width: auto;
+}
+.login .buttons {
+  margin: 1em;
+}

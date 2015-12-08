@@ -1,0 +1,188 @@
+body {
+  display: flex;
+  border: 1px solid #666;
+}
+body.browser {
+  border: none;
+}
+body.browser .controls .minimize,
+body.browser .controls .maximize,
+body.browser .controls .close {
+  display: none;
+}
+.controls {
+  display: flex;
+  align-items: flex-start;
+}
+.controls button {
+  width: 30px;
+  height: 25px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-app-region: no-drag;
+}
+.controls .toggle-notifications {
+  background: url("/images/controls/notifications-enabled.svg");
+}
+.controls .toggle-notifications:hover {
+  background: url("/images/controls/notifications-enabled-hover.svg");
+}
+.controls .toggle-notifications:active {
+  background: url("/images/controls/notifications-enabled-active.svg");
+}
+.controls .toggle-notifications.disabled {
+  background: url("/images/controls/notifications-disabled.svg");
+}
+.controls .toggle-notifications.disabled:hover {
+  background: url("/images/controls/notifications-disabled-hover.svg");
+}
+.controls .toggle-notifications.disabled:active {
+  background: url("/images/controls/notifications-disabled-active.svg");
+}
+.controls .minimize {
+  background: url("/images/controls/minimize-window.svg");
+}
+.controls .minimize:hover {
+  background: url("/images/controls/minimize-window-hover.svg");
+}
+.controls .minimize:active {
+  background: url("/images/controls/minimize-window-active.svg");
+}
+.controls .maximize {
+  background: url("/images/controls/maximize-window.svg");
+}
+.controls .maximize:hover {
+  background: url("/images/controls/maximize-window-hover.svg");
+}
+.controls .maximize:active {
+  background: url("/images/controls/maximize-window-active.svg");
+}
+.controls .close {
+  background: url("/images/controls/close-window.svg");
+}
+.controls .close:hover {
+  background: url("/images/controls/close-window-hover.svg");
+}
+.controls .close:active {
+  background: url("/images/controls/close-window-active.svg");
+}
+.server-header {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.server-header .server-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 0.5em;
+  background: #eee;
+}
+.server-header .server-name {
+  -webkit-app-region: drag;
+  font-size: 2em;
+  font-weight: bold;
+  flex: 1;
+}
+.server-header .controls {
+  align-self: flex-start;
+}
+.server-footer {
+  margin: 0.5em;
+  text-align: center;
+  opacity: 0.5;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.server-footer:hover {
+  opacity: 1;
+}
+body {
+  background: #eee;
+  display: flex;
+  flex-flow: column;
+}
+.projects-buttons {
+  margin: 0.5em;
+}
+.projects-tree-view {
+  flex: 1;
+  margin: 0 0.5em;
+  border: 1px solid #aaa;
+  background: #fff;
+  overflow-y: auto;
+  position: relative;
+}
+.projects-tree-view .connecting {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.projects-tree-view ol.tree {
+  position: absolute;
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+.projects-tree-view ol.tree li.item span,
+.projects-tree-view ol.tree li.group span {
+  padding: 0;
+}
+.projects-tree-view ol.tree li {
+  display: flex;
+  white-space: nowrap;
+  padding: 0.5em;
+  align-items: flex-start;
+  height: auto;
+}
+.projects-tree-view img {
+  width: 48px;
+  height: 48px;
+  margin-right: 0.5em;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+  background: #eee;
+}
+.projects-tree-view .info {
+  flex: 1;
+}
+.projects-tree-view .info > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.projects-tree-view .name {
+  font-weight: bold;
+}
+.projects-tree-view .details {
+  font-size: 0.7em;
+}
+.projects-tree-view .details .description {
+  color: rgba(0,0,0,0.8);
+}
+.projects-tree-view .details .project-type {
+  color: rgba(0,0,0,0.5);
+  visibility: hidden;
+}
+.projects-tree-view .details .description:not(:empty) + .project-type:before {
+  content: " — ";
+}
+.projects-tree-view ol.tree li:hover .project-type {
+  visibility: visible;
+}
+.dialog .template-description:not(:empty) + .system-description:not(:empty) {
+  margin-top: 0.5em;
+}

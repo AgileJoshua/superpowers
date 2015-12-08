@@ -1,0 +1,58 @@
+body {
+  height: auto;
+  display: flex;
+  flex-flow: column;
+}
+body .search,
+body .results {
+  padding: 0.5em;
+}
+body .search {
+  display: flex;
+  align-items: center;
+}
+body .search #match-case-checkbox {
+  margin-left: 0.5em;
+}
+body .search button {
+  margin: 0 0.5em;
+}
+body .search span {
+  color: #666;
+}
+body .results {
+  padding-top: 0;
+  display: flex;
+  flex-flow: column;
+}
+body .results > span {
+  cursor: pointer;
+  padding: 0.5em;
+  margin-top: 0.25em;
+  background-color: #444;
+  color: #fff;
+}
+body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+body table.collapsed {
+  display: none;
+}
+body table tr {
+  cursor: pointer;
+}
+body table tr:hover {
+  background: #ddd;
+}
+body table td {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+body table td:nth-child(2) {
+  width: 100%;
+  text-align: left;
+}
+body table td span:nth-child(2) {
+  background-color: #56e856;
+}

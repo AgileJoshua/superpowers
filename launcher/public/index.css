@@ -1,0 +1,473 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url("/fonts/Roboto/Roboto-Thin.woff") format('woff'), url("fonts/Roboto/Roboto-Thin.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url("/fonts/Roboto/Roboto-Light.woff") format('woff'), url("fonts/Roboto/Roboto-Light.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url("/fonts/Roboto/Roboto.woff") format('woff'), url("fonts/Roboto/Roboto.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url("/fonts/Roboto/Roboto-Bold.woff") format('woff'), url("fonts/Roboto/Roboto-Bold.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url("/fonts/Roboto/Roboto-Black.woff") format('woff'), url("fonts/Roboto/Roboto-Black.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url("/fonts/Roboto/Roboto-Thin-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Thin-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url("/fonts/Roboto/Roboto-Light-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Light-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'), url("/fonts/Roboto/Roboto-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url("/fonts/Roboto/Roboto-Bold-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Bold-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url("/fonts/Roboto/Roboto-Black-Italic.woff") format('woff'), url("fonts/Roboto/Roboto-Black-Italic.woff") format('woff');
+}
+button {
+  background: linear-gradient(#efefef, #e5e5e5);
+  padding: 0.3em 0.6em;
+  border: 1px solid #999;
+  border-radius: 2px;
+  box-shadow: 0 0 1px 1px #fff inset;
+  color: #222;
+  line-height: 1;
+}
+button:not(:disabled):hover {
+  border-color: #888;
+}
+button:active {
+  background: linear-gradient(#dadada, #e5e5e5);
+  border-color: #aaa;
+  box-shadow: 0 0 1px 1px #ccc inset;
+}
+button:disabled {
+  color: #aaa;
+}
+.button-strip button:not(:last-child) {
+  border-right: 0;
+  border-radius: 0;
+}
+.button-strip button:first-child {
+  border-radius: 2px 0 0 2px;
+}
+.button-strip button:last-child {
+  border-radius: 0 2px 2px 0;
+}
+.flat-button-strip {
+  display: flex;
+  background: rgba(0,0,0,0.05);
+  border-bottom: 1px solid #acacac;
+}
+.flat-button-strip button {
+  flex: 1;
+  height: 35px;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.flat-button-strip button:hover {
+  background-color: rgba(0,0,0,0.1);
+  opacity: 1;
+}
+.flat-button-strip button:active {
+  background-color: #fff;
+}
+.flat-button-strip button:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  font-family: inherit;
+}
+*[hidden] {
+  display: none !important;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+.superpowers-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #eee;
+  padding: 2em;
+  color: #444;
+}
+.superpowers-error h1 {
+  margin-bottom: 1em;
+}
+input[type=number]:not(:hover):not(:focus) {
+  -moz-appearance: textfield;
+}
+ol.tree {
+  list-style: none;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 0 2em 0;
+  width: 100%;
+  min-height: 100%;
+}
+ol.tree * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+ol.tree ol {
+  list-style: none;
+  margin: 0;
+  padding-left: 24px;
+}
+ol.tree ol:last-of-type.drop-below {
+  border-bottom: 1px solid #888;
+  padding-bottom: 0;
+}
+ol.tree li.item,
+ol.tree li.group {
+  background-clip: border-box;
+  height: 28px;
+  display: flex;
+  padding: 1px;
+  cursor: default;
+  display: flex;
+  align-items: center;
+}
+ol.tree li.item > .icon,
+ol.tree li.group > .icon,
+ol.tree li.item > .toggle,
+ol.tree li.group > .toggle {
+  margin: -1px;
+  width: 24px;
+  height: 24px;
+}
+ol.tree li.item span,
+ol.tree li.group span {
+  align-self: center;
+  padding: 0.25em;
+}
+ol.tree li.item:hover,
+ol.tree li.group:hover {
+  background-color: #eee;
+}
+ol.tree li.item.drop-above,
+ol.tree li.group.drop-above {
+  border-top: 1px solid #888;
+  padding-top: 0;
+}
+ol.tree li.item.drop-inside,
+ol.tree li.group.drop-inside {
+  border: 1px solid #888;
+  padding: 0;
+}
+ol.tree li.item.selected,
+ol.tree li.group.selected {
+  background: #beddf4;
+}
+ol.tree li.item.drop-below {
+  border-bottom: 1px solid #888;
+  padding-bottom: 0;
+}
+ol.tree li.group {
+  color: #444;
+}
+ol.tree li.group > .toggle {
+  background-image: url("/images/treeView/group-open.svg");
+  cursor: pointer;
+}
+ol.tree li.group.drop-below + ol {
+  border-bottom: 1px solid #888;
+}
+ol.tree li.group.drop-below + ol:empty {
+  margin-top: -1px;
+  pointer-events: none;
+}
+ol.tree li.group.collapsed > .toggle {
+  background-image: url("/images/treeView/group-closed.svg");
+}
+ol.tree li.group.collapsed + ol > ol,
+ol.tree li.group.collapsed + ol > li {
+  display: none;
+}
+.dialog {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(128,128,128,0.5);
+  display: flex;
+}
+.dialog form {
+  background-color: #fff;
+  margin: auto;
+  padding: 10px;
+  width: 450px;
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.dialog label,
+.dialog input,
+.dialog select,
+.dialog .group {
+  margin-bottom: 0.5em;
+}
+.dialog input,
+.dialog select,
+.dialog textarea {
+  padding: 0.125em 0.25em;
+}
+.dialog .buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.dialog .buttons button {
+  margin-left: 5px;
+}
+body {
+  background: #eee;
+  display: flex;
+  flex-flow: column;
+  border: 1px solid #666;
+}
+.pane-buttons {
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  -webkit-app-region: drag;
+}
+.pane-buttons > button {
+  outline: none;
+  -webkit-app-region: no-drag;
+  background: #f5f5f5;
+  padding: 0.75em 1em;
+  border: none;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  text-transform: uppercase;
+  border-radius: 0;
+  box-shadow: none;
+}
+.pane-buttons > button.active {
+  background: #444;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: none;
+}
+.pane-buttons > button:not(.active):hover {
+  background: #ccc;
+}
+.panes {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+}
+.panes > div {
+  flex: 1;
+}
+.panes > div:not(.active) {
+  display: none;
+}
+.panes > .servers {
+  display: flex;
+  flex-flow: column;
+}
+.panes > .servers .buttons {
+  margin: 0.5em 0.5em 0 0.5em;
+}
+.panes > .servers .servers-tree-view {
+  flex: 1;
+  margin: 0.5em;
+  border: 1px solid #aaa;
+  background: #fff;
+  overflow-y: auto;
+  position: relative;
+}
+.panes > .servers .servers-tree-view ol {
+  position: absolute;
+  min-height: 100%;
+}
+.panes > .servers .servers-tree-view li {
+  display: flex;
+  white-space: nowrap;
+}
+.panes > .servers .servers-tree-view li .address {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.panes > .servers .servers-tree-view .name {
+  font-weight: bold;
+}
+.panes > .servers .my-server {
+  height: 150px;
+  display: flex;
+  flex-flow: column;
+}
+.panes > .servers .my-server header {
+  padding: 0.5em;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.panes > .servers .my-server header .buttons {
+  margin: 0 0.5em;
+  flex: 1;
+}
+.panes > .servers .my-server textarea {
+  flex: 1;
+  resize: none;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+}
+.panes > .settings {
+  margin: 0.5em;
+}
+.panes > .settings input {
+  padding: 0.25em;
+}
+.panes > .settings table {
+  font-size: inherit;
+}
+.panes > .settings table th {
+  text-align: left;
+  padding-right: 1em;
+}
+.panes > .community ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.panes > .community li {
+  margin: 1em;
+}
+.splash {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("images/artwork.png") center center no-repeat, #eee;
+  background-size: auto 80%;
+  border: 1px solid rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.splash h1 {
+  font-weight: normal;
+  font-size: 3em;
+  margin-top: 1em;
+  line-height: 1;
+  pointer-events: none;
+}
+.splash .version {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5em;
+  font-weight: normal;
+  opacity: 0.5;
+}
+.splash .update-status {
+  position: absolute;
+  bottom: 0;
+  padding: 2em 0.5em;
+  left: 0;
+  right: 0;
+}
+a:hover {
+  text-decoration: none;
+  color: #66f;
+}
+.controls {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  font-size: 0;
+}
+.controls button {
+  width: 30px;
+  height: 25px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  -webkit-app-region: no-drag;
+}
+.controls button:hover,
+.controls button:active {
+  box-shadow: none;
+}
+.controls .minimize {
+  background: url("images/controls/minimize-window.svg");
+}
+.controls .minimize:hover {
+  background: url("images/controls/minimize-window-hover.svg");
+}
+.controls .minimize:active {
+  background: url("images/controls/minimize-window-active.svg");
+}
+.controls .close {
+  background: url("images/controls/close-window.svg");
+}
+.controls .close:hover {
+  background: url("images/controls/close-window-hover.svg");
+}
+.controls .close:active {
+  background: url("images/controls/close-window-active.svg");
+}
