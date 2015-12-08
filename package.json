@@ -29,6 +29,6 @@
     "typedarray-to-buffer": "^3.0.1",
     "typescript": "1.6.2",
     "yargs": "^3.6.0",
-    “gulp”: "^3.9.0”
+    "gulp": "^3.9.0"
   }
 }
