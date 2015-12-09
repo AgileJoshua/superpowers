@@ -1,0 +1,9 @@
+# loggingEnabled - controls whether stdout and stderr streams from node processes are captured and made available over HTTP
+
+loggingEnabled: true
+
+# debuggingEnabled - controls whether the built-in debugger is available
+
+debuggingEnabled: true
+
+devErrorsEnabled: true
