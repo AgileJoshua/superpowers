@@ -3,6 +3,7 @@ var path = require('path');
 var zip = require('gulp-zip');
 var minimist = require('minimist');
 var fs = require('fs');
+var install = require("gulp-install");
 
 var knownOptions = {
 	string: 'packageName',
@@ -14,6 +15,12 @@ var options = minimist(process.argv.slice(2), knownOptions);
 
 gulp.task('default', function () {
 
+//load remaining node stuff
+
+ 
+gulp.src(['**/package.json'])
+  .pipe(install());
+
 	var packagePaths = ['**', 
 					'!**/_package/**',  
 					'!_package', 
@@ -23,13 +30,6 @@ gulp.task('default', function () {
 	var packageJSON = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8'));
 	var devDeps = packageJSON.devDependencies;
 
-	for(var propName in devDeps)
-	{
-		var excludePattern1 = "!**/node_modules/" + propName + "/**";
-		var excludePattern2 = "!**/node_modules/" + propName;
-		packagePaths.push(excludePattern1);
-		packagePaths.push(excludePattern2);
-	}
 	
     return gulp.src(packagePaths)
         .pipe(zip(options.packageName))
