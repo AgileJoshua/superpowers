@@ -18,8 +18,8 @@ gulp.task('default', function () {
 //load remaining node stuff
 
  
-gulp.src(['**/package.json'])
-  .pipe(install());
+//gulp.src(['**/package.json'])
+//  .pipe(install());
 
 	var packagePaths = ['**', 
 					'!**/_package/**',  
