@@ -14,7 +14,7 @@ function default_1(mainApp, buildApp, callback) {
         var systemPath = path.join(systemsPath, systemName);
         // Expose public stuff
         mainApp.use("/systems/" + systemName, express.static(systemPath + "/public"));
-        buildApp.use("/systems/" + systemName, express.static(systemPath + "/public"));
+       // buildApp.use("/systems/" + systemName, express.static(systemPath + "/public"));
         // Write templates list
         var templatesInfo = {};
         if (fs.existsSync(systemPath + "/templates")) {
@@ -89,7 +89,7 @@ function loadPlugins(systemName, pluginsPath, mainApp, buildApp) {
                 require(apiModulePath);
             // Expose public stuff
             mainApp.use("/systems/" + systemName + "/plugins/" + pluginAuthor + "/" + pluginName, express.static(pluginPath + "/public"));
-            buildApp.use("/systems/" + systemName + "/plugins/" + pluginAuthor + "/" + pluginName, express.static(pluginPath + "/public"));
+            //buildApp.use("/systems/" + systemName + "/plugins/" + pluginAuthor + "/" + pluginName, express.static(pluginPath + "/public"));
             // Ensure all public files exist
             for (var _d = 0; _d < publicPluginFiles.length; _d++) {
                 var requiredFile = publicPluginFiles[_d];
