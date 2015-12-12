@@ -66,16 +66,16 @@ mainHttpServer.on("error", function (err) {
 */
 var io = socketio(mainHttpServer, { transports: ["websocket"] });
 // Build HTTP server
-var buildApp = express();
+//var buildApp = express();
 function redirectToHub(req, res) {
     res.redirect("http://" + req.hostname + ":" + config_1.default.mainPort + "/hub/");
 }
-buildApp.get("/", redirectToHub);
-buildApp.get("/systems/:systemName/SupCore.js", function (req, res) {
+//buildApp.get("/", redirectToHub);
+mainApp.get("/systems/:systemName/SupCore.js", function (req, res) {
     res.sendFile("SupCore.js", { root: __dirname + "/../public" });
 });
-buildApp.use("/", express.static(__dirname + "/../public"));
-buildApp.get("/builds/:projectId/:buildId/*", function (req, res) {
+//buildApp.use("/", express.static(__dirname + "/../public"));
+mainApp.get("/builds/:projectId/:buildId/*", function (req, res) {
     var projectServer = hub.serversById[req.params.projectId];
     if (projectServer == null) {
         res.status(404).end("No such project");
@@ -89,7 +89,7 @@ var buildHttpServer;// = http.createServer(buildApp);
 var mainHttpServer;
 loadSystems_1.default(mainApp, buildApp, function () {
     mainApp.use(handle404);
-    buildApp.use(handle404);
+    //buildApp.use(handle404);
     // Project hub
     hub = new ProjectHub_1.default(io, function (err) {
         if (err != null) {
@@ -106,13 +106,13 @@ loadSystems_1.default(mainApp, buildApp, function () {
             debug('Main Express server listening on port ' + mainApp.address().port);
         
             //alternate hosting logic
-            buildApp.set('port', process.env.PORT || 3000);
+      //      buildApp.set('port', process.env.PORT || 3000);
             
-            var buildHttpServer = buildApp.listen(buildApp.get('port'), function () {
-                debug('Build Express server listening on port ' + buildApp.address().port);
-                if (hostname === "localhost")
-                    SupCore.log("NOTE: Setup a password to allow other people to connect to your server.");
-            });
+       //     var buildHttpServer = buildApp.listen(buildApp.get('port'), function () {
+        //        debug('Build Express server listening on port ' + buildApp.address().port);
+        //        if (hostname === "localhost")
+        //            SupCore.log("NOTE: Setup a password to allow other people to connect to your server.");
+        //    });
             /*
             buildHttpServer.listen(config_1.default.buildPort, hostname, function () {
                 SupCore.log("Main server started on port " + config_1.default.mainPort + ", build server started on port " + config_1.default.buildPort + ".");
@@ -133,7 +133,7 @@ function onExit() {
         return;
     isQuitting = true;
     mainHttpServer.close();
-    buildHttpServer.close();
+    //buildHttpServer.close();
     SupCore.log("Saving all projects...");
     hub.saveAll(function (err) {
         if (err != null)
