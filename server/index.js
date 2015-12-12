@@ -87,6 +87,7 @@ mainApp.get("/builds/:projectId/:buildId/*", function (req, res) {
 
 var buildHttpServer;// = http.createServer(buildApp);
 var mainHttpServer;
+var buildApp;
 loadSystems_1.default(mainApp, buildApp, function () {
     mainApp.use(handle404);
     //buildApp.use(handle404);
