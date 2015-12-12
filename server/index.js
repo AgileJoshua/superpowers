@@ -103,7 +103,7 @@ loadSystems_1.default(mainApp, buildApp, function () {
         mainApp.set('port', process.env.PORT || 3000);
         
          mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
-            debug('Main Express server listening on port ' + mainApp.address().port);
+            debug('Main Express server listening on port ' + mainHttpServer.address().port);
         
             //alternate hosting logic
       //      buildApp.set('port', process.env.PORT || 3000);
