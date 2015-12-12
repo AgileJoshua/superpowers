@@ -15,7 +15,7 @@ else {
         switch (process.platform) {
             case "win32":
                 if (process.env.APPDATA != null)
-                    exports.userData = path.join(process.env.APPDATA, "Superpowers");
+                    exports.userData = path.join(process.env.HOME,'data', "Superpowers");
                 else
                     SupCore.log("Warning: Could not find APPDATA environment variable.");
                 break;
