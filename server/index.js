@@ -53,7 +53,7 @@ mainApp.use("/projects/:projectId/*", function (req, res) {
 
 
 
-/*
+
 var mainHttpServer = http.createServer(mainApp);
 mainHttpServer.on("error", function (err) {
     if (err.code === "EADDRINUSE") {
@@ -63,7 +63,7 @@ mainHttpServer.on("error", function (err) {
     else
         throw (err);
 });
-*/
+
 var io = socketio(mainHttpServer, { transports: ["websocket"] });
 // Build HTTP server
 //var buildApp = express();
@@ -86,34 +86,35 @@ mainApp.get("/builds/:projectId/:buildId/*", function (req, res) {
 
 
 var buildHttpServer;// = http.createServer(buildApp);
-var mainHttpServer;
+//var mainHttpServer;
 var buildApp;
 loadSystems_1.default(mainApp, buildApp, function () {
     mainApp.use(handle404);
     //buildApp.use(handle404);
     // Project hub
-    hub = new ProjectHub_1.default(io, function (err) {
+    hub = new ProjectHub_1.default(io, function(err) {
         if (err != null) {
             SupCore.log("Failed to start server:\n" + err.stack);
             return;
         }
+        mainApp.set('port', process.env.PORT || 3000);
         SupCore.log("Loaded " + Object.keys(hub.serversById).length + " projects from " + paths.projects + ".");
         var hostname = (config_1.default.password.length === 0) ? "localhost" : "";
-        //mainHttpServer.listen(config_1.default.mainPort, hostname, function () {
-        //alternate hosting logic
-        mainApp.set('port', process.env.PORT || 3000);
-        
-         mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
-            debug('Main Express server listening on port ' + mainHttpServer.address().port);
-        
+        mainHttpServer.listen(mainApp.get('port'), hostname, function() {
             //alternate hosting logic
-      //      buildApp.set('port', process.env.PORT || 3000);
-            
-       //     var buildHttpServer = buildApp.listen(buildApp.get('port'), function () {
-        //        debug('Build Express server listening on port ' + buildApp.address().port);
-        //        if (hostname === "localhost")
-        //            SupCore.log("NOTE: Setup a password to allow other people to connect to your server.");
-        //    });
+
+
+            // mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
+            debug('Main Express server listening on port ' + mainHttpServer.address().port);
+
+            //alternate hosting logic
+            //      buildApp.set('port', process.env.PORT || 3000);
+
+            //     var buildHttpServer = buildApp.listen(buildApp.get('port'), function () {
+            //        debug('Build Express server listening on port ' + buildApp.address().port);
+            //        if (hostname === "localhost")
+            //            SupCore.log("NOTE: Setup a password to allow other people to connect to your server.");
+            //    });
             /*
             buildHttpServer.listen(config_1.default.buildPort, hostname, function () {
                 SupCore.log("Main server started on port " + config_1.default.mainPort + ", build server started on port " + config_1.default.buildPort + ".");
