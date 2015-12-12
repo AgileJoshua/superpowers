@@ -10,6 +10,7 @@ var config_1 = require("./config");
 var SupCore = require("../SupCore");
 var loadSystems_1 = require("./loadSystems");
 var ProjectHub_1 = require("./ProjectHub");
+var debug = require('debug')('serverstart');
 // Globals
 global.SupCore = SupCore;
 var _a = JSON.parse(fs.readFileSync(__dirname + "/../package.json", { encoding: "utf8" })), version = _a.version, appApiVersion = _a.superpowers.appApiVersion;
@@ -85,6 +86,7 @@ buildApp.get("/builds/:projectId/:buildId/*", function (req, res) {
 
 
 var buildHttpServer;// = http.createServer(buildApp);
+var mainHttpServer;
 loadSystems_1.default(mainApp, buildApp, function () {
     mainApp.use(handle404);
     buildApp.use(handle404);
@@ -100,7 +102,7 @@ loadSystems_1.default(mainApp, buildApp, function () {
         //alternate hosting logic
         mainApp.set('port', process.env.PORT || 3000);
         
-        var mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
+         mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
             debug('Main Express server listening on port ' + mainApp.address().port);
         
             //alternate hosting logic
