@@ -50,12 +50,7 @@ mainApp.use("/projects/:projectId/*", function (req, res) {
     });
 });
 
-//alternate hosting logic
-mainApp.set('port', process.env.PORT || 3000);
 
-var mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
-    debug('Main Express server listening on port ' + mainApp.address().port);
-});
 
 /*
 var mainHttpServer = http.createServer(mainApp);
@@ -102,7 +97,12 @@ loadSystems_1.default(mainApp, buildApp, function () {
         SupCore.log("Loaded " + Object.keys(hub.serversById).length + " projects from " + paths.projects + ".");
         var hostname = (config_1.default.password.length === 0) ? "localhost" : "";
         //mainHttpServer.listen(config_1.default.mainPort, hostname, function () {
-            
+        //alternate hosting logic
+        mainApp.set('port', process.env.PORT || 3000);
+        
+        var mainHttpServer = mainApp.listen(mainApp.get('port'), function () {
+            debug('Main Express server listening on port ' + mainApp.address().port);
+        
             //alternate hosting logic
             buildApp.set('port', process.env.PORT || 3000);
             
